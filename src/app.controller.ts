@@ -20,11 +20,6 @@ export class AppController {
     private keycloakService: KeycloakService,
   ) {}
 
-  @Get('/hey')
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
   @PublicPath()
   @Post('/login')
   async auth(@Body() body) {
@@ -44,7 +39,7 @@ export class AppController {
   }
 
   @PublicPath()
-  @Get('logout')
+  @Get('/logout')
   logout(@Res() resp) {
     resp.status(302).redirect('/login');
   }
