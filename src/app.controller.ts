@@ -29,9 +29,7 @@ export class AppController {
   @Post('/login')
   async auth(@Body() body) {
     try {
-      this.logger.log('auth function start working');
       const res = await this.keycloakService.login(body.user, body.password);
-      this.logger.log(res);
       this.logger.log('USER IS AUTHENTICATED');
       return res;
     } catch (e) {

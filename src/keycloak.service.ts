@@ -13,8 +13,6 @@ import { Keycloak } from 'keycloak-connect';
 
 @Injectable({ scope: Scope.REQUEST })
 export class KeycloakService {
-  private readonly logger = new Logger(KeycloakService.name);
-
   constructor(
     @Inject(KEYCLOAK_INSTANCE) private keycloak: Keycloak,
     @Inject(KEYCLOAK_CONNECT_OPTIONS) private options: KeycloakConnectOptions,
